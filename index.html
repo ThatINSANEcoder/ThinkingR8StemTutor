@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thinking-R8 is an AI science tutor covering physics, chemistry, biology, and Earth and space science.">
+    <title>Thinking-R8 | AI Science Tutor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header class="top-bar">
+        <div class="top-bar-container">
+            <a href="#" class="brand-name">Thinking-R8</a>
+            <nav class="main-navigation">
+                <a href="#ask" class="nav-link">Ask</a>
+                <a href="#topics" class="nav-link">Topics</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Ask Section -->
+        <section id="ask" class="ask-section">
+            <div class="ask-container">
+                <div class="ask-intro">
+                    <p class="section-eyebrow">YOUR AI SCIENCE TUTOR</p>
+                    <h1 class="main-heading">Stem Answers For Every Curious Mind!</h1>
+                    <p class="intro-description">
+                        Explore science, ask questions, and discover clear explanations
+                        with Thinking-R8, your browser-based AI science tutor.
+                    </p>
+                </div>
+
+                <div class="tutor-interface">
+                    <div class="tutor-status">
+                        <span class="status-indicator"></span>
+                        <p id="status">Loading the AI...</p>
+                    </div>
+
+                    <div class="question-container">
+                        <textarea
+                            id="question"
+                            class="question-input"
+                            placeholder="Ask a science question"
+                            rows="3"
+                        ></textarea>
+
+                        <button id="ask-button" class="ask-button" type="button">
+                            Ask
+                        </button>
+                    </div>
+
+                    <div id="answer" class="answer-box"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics Section -->
+        <section id="topics" class="topics-section">
+            <div class="topics-container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">EXPLORE THE SCIENCES</p>
+                    <h2 class="section-title">Trained on 20 science topics</h2>
+                    <p class="section-description">
+                        Explore four major areas of science through focused topics
+                        and example questions.
+                    </p>
+                </div>
+
+                <!-- Statistics -->
+                <div class="statistics-row">
+                    <div class="stat-card">
+                        <span class="stat-number">20</span>
+                        <span class="stat-label">Topics</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Sciences</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-number">533,000</span>
+                        <span class="stat-label">Practice conversations</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-number">25M</span>
+                        <span class="stat-label">Parameters</span>
+                    </div>
+                </div>
+
+                <!-- Physics -->
+                <div class="science-category physics-category">
+                    <div class="category-heading">
+                        <h3 class="category-title">Physics</h3>
+                        <p class="category-description">
+                            Understand the forces, energy, and principles that
+                            shape the physical world.
+                        </p>
+                    </div>
+
+                    <div class="topic-grid">
+                        <article class="topic-card">
+                            <h4 class="topic-name">Newton's Laws &amp; Inertia</h4>
+                            <p class="topic-example">Try: what is inertia</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Friction &amp; Air Resistance</h4>
+                            <p class="topic-example">Try: what is friction</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Gravity</h4>
+                            <p class="topic-example">Try: why do things fall</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Magnetism</h4>
+                            <p class="topic-example">Try: how does a compass work</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Electricity &amp; Circuits</h4>
+                            <p class="topic-example">Try: what is a series circuit</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Light &amp; Optics</h4>
+                            <p class="topic-example">Try: how do mirrors work</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Sound &amp; Waves</h4>
+                            <p class="topic-example">Try: what is an echo</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Heat &amp; Temperature</h4>
+                            <p class="topic-example">Try: why do metal spoons get hot</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Chemistry -->
+                <div class="science-category chemistry-category">
+                    <div class="category-heading">
+                        <h3 class="category-title">Chemistry</h3>
+                        <p class="category-description">
+                            Discover the substances, structures, and reactions
+                            that make up our world.
+                        </p>
+                    </div>
+
+                    <div class="topic-grid">
+                        <article class="topic-card">
+                            <h4 class="topic-name">States of Matter</h4>
+                            <p class="topic-example">Try: what is melting</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Atoms &amp; the Periodic Table</h4>
+                            <p class="topic-example">Try: what is the periodic table</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Chemical Reactions</h4>
+                            <p class="topic-example">Try: what is combustion</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Acids &amp; Bases</h4>
+                            <p class="topic-example">Try: what happens when you mix vinegar and baking soda</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Mixtures &amp; Separation</h4>
+                            <p class="topic-example">Try: what is distillation</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Biology -->
+                <div class="science-category biology-category">
+                    <div class="category-heading">
+                        <h3 class="category-title">Biology</h3>
+                        <p class="category-description">
+                            Explore living organisms, the human body, and
+                            the systems that support life.
+                        </p>
+                    </div>
+
+                    <div class="topic-grid">
+                        <article class="topic-card">
+                            <h4 class="topic-name">Cells &amp; Microscopes</h4>
+                            <p class="topic-example">Try: what does the nucleus do</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Human Body Systems</h4>
+                            <p class="topic-example">Try: what does the heart do</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Plants &amp; Photosynthesis</h4>
+                            <p class="topic-example">Try: what is photosynthesis</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Genetics &amp; Inheritance</h4>
+                            <p class="topic-example">Try: what are genes</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">Ecosystems &amp; Food Chains</h4>
+                            <p class="topic-example">Try: what is a habitat</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Earth and Space -->
+                <div class="science-category earth-space-category">
+                    <div class="category-heading">
+                        <h3 class="category-title">Earth &amp; Space</h3>
+                        <p class="category-description">
+                            Learn about Earth's natural processes and
+                            the objects beyond our planet.
+                        </p>
+                    </div>
+
+                    <div class="topic-grid">
+                        <article class="topic-card">
+                            <h4 class="topic-name">Rocks &amp; the Water Cycle</h4>
+                            <p class="topic-example">Try: what is the water cycle</p>
+                        </article>
+
+                        <article class="topic-card">
+                            <h4 class="topic-name">The Solar System</h4>
+                            <p class="topic-example">Try: what is the moon</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="section-heading">
+                    <p class="section-eyebrow">HOW IT WORKS</p>
+                    <h2 class="section-title">Science learning, made simple</h2>
+                    <p class="section-description">
+                        Three straightforward steps take you from a question
+                        to an explanation.
+                    </p>
+                </div>
+
+                <div class="steps-container">
+                    <article class="step-card">
+                        <span class="step-number">01</span>
+                        <h3 class="step-title">You ask a question</h3>
+                    </article>
+
+                    <article class="step-card">
+                        <span class="step-number">02</span>
+                        <h3 class="step-title">v8 thinks inside your browser</h3>
+                    </article>
+
+                    <article class="step-card">
+                        <span class="step-number">03</span>
+                        <h3 class="step-title">The answer appears word by word</h3>
+                    </article>
+                </div>
+
+                <p class="disclaimer">
+                    v8 is a small model trained from scratch in class, so it can
+                    make mistakes. Check important facts.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-credit">
+                Designed and built by <span class="author-name">Alfred Huang</span>
+            </p>
+            <p class="footer-powered">
+                Powered by v8, a 25-million-parameter language model
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://kkmayank1983.github.io/ai-tutor-v8/v8.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
