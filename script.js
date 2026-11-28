@@ -1,48 +1,54 @@
-// script.js - the wiring that connects your website to v8.
-// You do not need to change anything in this file.
 
-// 1. Where v8 lives on the internet
-const MODEL_HOME = "https://kkmayank1983.github.io/ai-tutor-v8/";
+document.addEventListener("DOMContentLoaded", () => {
+  const questionInput = document.getElementById("question");
+  const askButton = document.getElementById("ask-button");
+  const welcome = document.getElementById("welcome");
+  const answer = document.getElementById("answer");
+  const newChatButton = document.getElementById("new-chat");
 
-// 2. Find the parts of your page by their ids
-const statusLine = document.getElementById("status");
-const questionBox = document.getElementById("question");
-const askButton = document.getElementById("ask-button");
-const answerBox = document.getElementById("answer");
-
-askButton.disabled = true;   // no asking until v8 has arrived
-
-// 3. Download v8 into this browser (slow only the first time)
-V8.load({
-  base: MODEL_HOME,
-  onProgress: function (fraction, words) {
-    statusLine.textContent = words;
-  }
-}).then(function (tutor) {
-  statusLine.textContent = "v8 is ready. Ask a science question.";
-  askButton.disabled = false;
-
-  // 4. Ask v8 and show its answer, word by word
-  async function askV8(event) {
-    event.preventDefault();               // stop the page from reloading
-    const question = questionBox.value.trim();
-    if (question === "") return;
-    askButton.disabled = true;
-    answerBox.textContent = "Thinking...";
-    try {
-      answerBox.textContent = await tutor.ask(question, {
-        onToken: function (soFar) { answerBox.textContent = soFar; }
-      });
-    } catch (error) {
-      answerBox.textContent = "Sorry: " + error.message;
+  // Hide the welcome screen after the first question is submitted.
+  function hideWelcome() {
+    if (welcome) {
+      welcome.style.display = "none";
     }
-    askButton.disabled = false;
   }
 
-  askButton.addEventListener("click", askV8);
-  questionBox.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") askV8(event);
+  // Suggested questions.
+  document.querySelectorAll("[data-question]").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!questionInput) return;
+
+      questionInput.value = button.dataset.question;
+      questionInput.focus();
+      questionInput.dispatchEvent(new Event("input", { bubbles: true }));
+
+      // Use the existing AI button.
+      if (askButton) {
+        askButton.click();
+      }
+    });
   });
-}).catch(function (error) {
-  statusLine.textContent = "Could not load v8: " + error.message;
+
+  // Hide welcome when the existing Ask button is clicked.
+  if (askButton) {
+    askButton.addEventListener("click", hideWelcome);
+  }
+
+  // Start a new chat.
+  if (newChatButton) {
+    newChatButton.addEventListener("click", () => {
+      if (questionInput) {
+        questionInput.value = "";
+        questionInput.focus();
+      }
+
+      if (answer) {
+        answer.innerHTML = "";
+      }
+
+      if (welcome) {
+        welcome.style.display = "";
+      }
+    });
+  }
 });
