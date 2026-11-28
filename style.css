@@ -585,6 +585,59 @@ footer {
   .about-section {
     padding: 50px 18px;
   }
+  
+/* Chat message styling */
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 85%;
+  margin-bottom: 22px;
+}
+
+.message.user {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.message.assistant {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.message-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.message-content {
+  padding: 15px 18px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.message.user .message-content {
+  background: #2563EB;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message.assistant .message-content {
+  background: #F1F5F9;
+  color: #0F172A;
+  border-bottom-left-radius: 4px;
+}
+
+@media (max-width: 650px) {
+  .message {
+    max-width: 95%;
+  }
+}
 
   .section-container h2 {
     font-size: 23px;
